@@ -3,6 +3,6 @@
     "flow-bin": "^0.69.0"
   },
 	"scripts": {
-		"flow": "flow"
+		"test": "flow"
 	}
 }
