@@ -12,7 +12,7 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 		throw new Error('fail');
 	};
 
-	[res, err] = await dx(sleepThenFail, 3);
+	[res, err] = await dx(sleepThenFail, 1);
 	if (err !== null) {
 		console.error(err.stack);
 	}
