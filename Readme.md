@@ -22,15 +22,15 @@ const userInput = 'fail';
 
 let json;
 try {
-	json = JSON.parse(userInput);
+  json = JSON.parse(userInput);
 } catch (err) {
-	console.error(err.stack);
+  console.error(err.stack);
 }
 
 // Do something with `json`...
 ```
 
-If you do remember to add a `.catch` handler, the result of your operation must have a `let` binding if you want to use the result outside of the `try` block. Not to mention, it's kinda verbose.
+If you do remember to add a `catch` handler, the result of your operation must have a `let` binding if you want to use the result outside of the `try` block. Not to mention, it's kinda verbose.
 
 ### Localized, explicit error handling
 
@@ -38,12 +38,12 @@ Finally, it's all too easy to write code with a single, global error handler:
 
 ```js
 try {
-	// bunch of stuff happens...
-	// ...
-	// ...
+  // bunch of stuff happens...
+  // ...
+  // ...
 } catch (err) {
-	console.log('welp');
-	console.error(err.stack);
+  console.log('welp');
+  console.error(err.stack);
 }
 ```
 
