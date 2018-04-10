@@ -13,7 +13,7 @@ const userInput = 'fail';
 const json = JSON.parse(userInput);
 ```
 
-If you forget to add a `.catch` handler, the line above will crash your app.
+If you forget to add a `catch` handler, the line above will crash your app.
 
 ### `let` vs `const` binding
 
@@ -48,6 +48,10 @@ try {
 ```
 
 But you might want your error handling to be more fine-grained and localized to specific operations.
+
+## Enter `dx`
+
+`dx` solves these problems by (elaborate)
 
 ## License
 
