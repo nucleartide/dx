@@ -1,19 +1,18 @@
-/*::
-type Args     = Array<any>;
-type Callback = (...Args) => any;
-*/
+exports.dx = function dx(func) {
+  return function funcWrappedByDx(...args) {
+    try {
+      const res = func(...args)
 
-exports.dx = (cb /*: Callback */, ...args /*: Args */) => {
-	try {
-		const res = cb(...args);
-		if (res && typeof res.then === 'function') {
-			return res
-			.then(res => ([res, null]))
-			.catch(err => ([null, err]));
-			;
-		}
-		return [res, null];
-	} catch (err) {
-		return [null, err];
-	}
-};
+      const isPromise = res && typeof res.then === 'function'
+      if (isPromise) {
+        return res
+          .then(res => ([res, null]))
+          .catch(err => ([null, err]))
+      }
+
+      return [res, null]
+    } catch (err) {
+      return [null, err]
+    }
+  }
+}
