@@ -1,0 +1,19 @@
+{
+  "name": "@nucleartide/dx",
+  "version": "1.0.0",
+  "description": "JavaScript without `try...catch`.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nucleartide/dx.git"
+  },
+  "author": "Jason Tu <jasontu4@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nucleartide/dx/issues"
+  },
+  "homepage": "https://github.com/nucleartide/dx#readme"
+}
