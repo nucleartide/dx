@@ -1,13 +1,19 @@
-exports.dx = function dx(func) {
-  return function funcWrappedByDx(...args) {
-    try {
-      const res = func(...args)
+'use strict'
 
-      const isPromise = res && typeof res.then === 'function'
+exports.dx = function dx(func, ctx) {
+  ctx = ctx || null
+
+  return function funcWrappedByDx() {
+    var args = Array.prototype.slice.call(arguments)
+
+    try {
+      var res = func.apply(ctx, args)
+
+      var isPromise = res && typeof res.then === 'function'
       if (isPromise) {
         return res
-          .then(res => ([res, null]))
-          .catch(err => ([null, err]))
+          .then(function(res) { return [res, null] })
+          .catch(function(err) { return [null, err] })
       }
 
       return [res, null]
