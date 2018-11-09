@@ -1,6 +1,6 @@
 {
   "name": "@nucleartide/dx",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "JavaScript without `try...catch`.",
   "main": "index.js",
   "scripts": {
