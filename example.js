@@ -28,7 +28,7 @@ class Dog {
     console.error(err2.stack)
   }
 
-  const d = new Dog()
+  const d = new Dog
   const [res3, err3] = await dx(d.eatFood, d)()
   if (err3) {
     console.error(err3.stack)
